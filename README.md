@@ -65,4 +65,4 @@ frontend/
 
 ## 👨‍💻 Autor
 
-Desenvolvido por **José Fernando** © 2025  
+Desenvolvido por José Fernando de Lima Amorim
