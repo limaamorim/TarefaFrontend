@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerenciador de Tarefas</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <i class="fas fa-tasks"></i>
+                <span>Gerenciador de Tarefas</span>
+            </div>
+            <button class="theme-toggle" id="themeToggle">
+                <i class="fas fa-moon"></i>
+            </button>
+        </header>
+
+        <div class="add-task-form">
+            <h2>Adicionar Nova Tarefa</h2>
+            <form id="tarefaForm">
+                <div class="form-group">
+                    <label for="tarefaTitulo">Título *</label>
+                    <input type="text" id="tarefaTitulo" required placeholder="Ex: Fazer compras">
+                </div>
+                <div class="form-group">
+                    <label for="tarefaDescricao">Descrição</label>
+                    <textarea id="tarefaDescricao" placeholder="Ex: Comprar leite, ovos e pão"></textarea>
+                </div>
+                <button type="submit">
+                    <i class="fas fa-plus"></i> Adicionar Tarefa
+                </button>
+            </form>
+        </div>
+
+        <div class="filters">
+            <button class="filter-btn active" data-filter="all">Todas</button>
+            <button class="filter-btn" data-filter="pending">Pendentes</button>
+            <button class="filter-btn" data-filter="completed">Concluídas</button>
+        </div>
+
+        <div class="tarefas-container" id="tarefasContainer">
+            <!-- As tarefas serão inseridas aqui via JavaScript -->
+            <div class="empty-state" id="emptyState">
+                <i class="fas fa-clipboard-list"></i>
+                <h3>Nenhuma tarefa cadastrada</h3>
+                <p>Adicione uma nova tarefa para começar</p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>José Fernando &copy; 2025 - Gerenciador de Tarefas</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
