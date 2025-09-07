@@ -36,7 +36,7 @@ function configurarEventos() {
 // Buscar tarefas do backend
 async function buscarTarefas() {
     try {
-        const res = await fetch("http://localhost:3000/api/tarefas");
+        const res = await fetch("https://tarefabackend.onrender.com/api/tarefas");
         tarefas = await res.json();
         renderizarTarefas();
     } catch (error) {
@@ -60,7 +60,7 @@ async function adicionarTarefa(e) {
     const novaTarefa = { titulo, descricao };
 
     try {
-        const res = await fetch("http://localhost:3000/api/tarefas", {
+        const res = await fetch("https://tarefabackend.onrender.com/api/tarefas", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(novaTarefa)
@@ -83,7 +83,7 @@ async function alternarConclusaoTarefa(id) {
     const tarefa = tarefas.find(t => t._id === id);
 
     try {
-        const res = await fetch(`http://localhost:3000/api/tarefas/${id}`, {
+        const res = await fetch(`https://tarefabackend.onrender.com/api/tarefas/${id}`, {
             method: "PUT",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ concluida: !tarefa.concluida })
@@ -103,7 +103,7 @@ async function removerTarefa(id) {
     if (!confirm('Tem certeza que deseja excluir esta tarefa?')) return;
 
     try {
-        await fetch(`http://localhost:3000/api/tarefas/${id}`, { method: "DELETE" });
+        await fetch(`https://tarefabackend.onrender.com/api/tarefas/${id}`, { method: "DELETE" });
         tarefas = tarefas.filter(t => t._id !== id);
         renderizarTarefas();
     } catch (error) {
@@ -216,4 +216,5 @@ function mostrarErro(mensagem) {
     setTimeout(() => {
         document.body.removeChild(erroElement);
     }, 5000);
+
 }
